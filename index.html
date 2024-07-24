@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        :root{
+            --header-background-color: #007BFF;
+            --header-text-color: #FFFFFF;
+            --header-link-hover-color: #39FF14;
+            --header-link-color: #2F4F4F;
+            --main-background-color: #F5F5F5;
+            --main-text-color: #333333;
+            --main-heading-color: #00346b;
+            --main-link-color: #39FF14;
+            --main-link-hover-color: #00346b;
+            --footer-background-color: #2F4F4F;
+            --footer-text-color: #F5F5F5;
+            --footer-link-color: #007BFF; 
+            --footer-link-hover-color: #39FF14;
+        }
+        body{
+            background-color: var(--main-background-color);
+        }
+        header{
+            height: 8vh;
+        }
+        .header1{
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 4vh;
+            padding: 0 5vh;
+        }
+        .header1 a{
+            text-decoration: none;
+            color: var(--header-link-color);
+            padding: 0 5px;
+            border-left: 2px solid var(--header-link-color);
+        }
+        .header1 a:hover{
+            color: var(--header-link-hover-color);
+        }
+        .header1 .socials a{
+            border: none;
+        }
+        .header1 .socials{
+            display: flex;
+            gap: 8px;
+            padding: 0 5px;
+            border-left: 2px solid var(--header-link-color);
+        }
+        /* Header two, which will be sticky */
+        .header2{
+            position: sticky;
+            top: 0;
+            padding: 0 5vh;
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            background-color: var(--main-background-color);
+        }
+        nav{
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5vh 0 0;
+            color: var(--main-heading-color);
+        }
+        nav a{
+            color: var(--main-link-hover-color);
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        nav a:hover{
+            color: var(--main-link-color);
+        }
+        .header2 .logo-container{
+            height: 80%;
+            width: 50%;
+            text-align: center;
+        }
+        .header2 img{
+            height: 100%;
+            width: 100%;
+            opacity: 0.3;
+        }
+        main{
+            padding: 3vh 10vh;
+            height: 1000vh;
+        }
+        main .intro{
+            display: flex;
+            position: relative;
+        }
+        main .intro .floating-img{
+            position: absolute;
+            top: 10%;
+            left: 45%;
+            width: 300px;
+            height: 50vh;
+            animation: z 4s ease-in-out infinite;
+        }
+        main .intro .floating-img img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        @keyframes z{
+            0%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-10%);
+            }
+            100%{
+                transform: translateY(0);
+            }
+        }
+        main .intro .intro-text{
+            width: 50%;
+            line-height: 1.5;
+        }
+        main .intro .intro-text h2{
+            color: var(--main-heading-color);
+        }
+        main .intro .intro-text p{
+            width: 90%;
+            color: var(--main-text-color);
+        }
+        main .intro .intro-text p span{
+            color: var(--header-background-color);
+            font-size: 16px;
+            display: block;
+            margin: 10px 0;
+        }
+        main .intro .intro-image{
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        main .intro .intro-image img{
+            width: 60%;
+            height: 50vh;
+            border-radius: 10px;
+        }
+
+        /* Services */
+        main .services{
+            margin: 10vh 0;
+            padding: 5vh 5vh;
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+            background-color: #fafafa;
+        }
+        main .services h3{
+            color: var(--main-heading-color);
+        }
+        main .services .container{
+            display: flex;
+            gap: 2%;
+        }
+        main .services .container>:nth-child(2){
+            transform: translateY(-5vh);
+        }
+        main .services .container .card{
+            width: 32%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1vh;
+            color: var(--main-text-color);
+            background-color: var(--main-background-color);
+            border-radius: 10px;
+        }
+        main .services .container .card img{
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        main .services .container .card h4{
+            padding: 0 1vh;
+        }
+        main .services .container .card p{
+            padding: 0 1vh;
+        }
+        main .services .container .card button{
+            margin: 3vh 1vh;
+            width: 70%;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--header-background-color);
+            color: var(--header-text-color);
+            transition: 0.3s;
+        }
+        main .services .container .card button:hover{
+            cursor: pointer;
+            background-color: #333333;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header class="header1">
+        <a href="#"><i class="fas fa-envelope"></i> info@ai.co.ke</a>
+        <a href="#"><i class="fas fa-phone"></i> +254724526552</a>
+        <div class="socials">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter-x"></i></a>
+        </div>
+    </header>
+    <header class="header2">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Our Services</a>
+            <a href="#">Resources</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="logo-container">
+            <img src="https://img.freepik.com/premium-photo/abstract-gray-background-with-gray-lines-generative-ai_169016-39175.jpg" alt="Our logo">
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h2>Welcome to AI&CODESHPERE</h2>
+                <p><span><b style="font-size: 18px;">Innovative AI Solutions Inc.</b> specializes in transforming customer interactions through advanced artificial intelligence and chatbot technology. We create intelligent, enhancing user experiences and automating operations.</span> By leveraging cutting-edge natural language processing and machine learning, human-like responses and continuous improvement over time. Partner with us to elevate your customer service, and stay ahead in a rapidly evolving digital landscape.</p>
+            </div>
+            <div class="floating-img">
+                <img src="https://th.bing.com/th/id/OIP.tOLOoGVXikyfPlap8r_cAgHaHa?rs=1&pid=ImgDetMain" alt="Animated Image">
+            </div>
+            <div class="intro-image">
+                <img src="https://img.freepik.com/premium-photo/abstract-gray-background-with-gray-lines-generative-ai_169016-39175.jpg" alt="Our description Image">
+            </div>
+        </section>
+        <section class="services">
+            <h3>Our Services</h3>
+            <div class="container">
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.ElElv8AU7G7vqOHSK8DwpAHaE8?rs=1&pid=ImgDetMain" alt="Chatbot service">
+                    <h4>Chatbot Service</h4>
+                    <p>A chatbot service delivers 24/7 instant chat magic, powered by AI! It answers questions, handles support, and even processes transactions-all while keeping the conversation lively and engaging.</p>
+                    <button>Contact Us</button>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/R.6a43cd26ba1fa15f03b25d480c8b092f?rik=9hXcc2YbEqJw8w&pid=ImgRaw&r=0" alt="AI service">
+                    <h4>AI Services</h4>
+                    <p>Discover the future with our AI services! We deliver cutting-edge solutions that supercharge your business, from smart automation to personalized recommendations and seamless integrations. Let our AI turn data into insights.</p>
+                    <button>Contact Us</button>
+                </div>
+                <div class="card">
+                    <img src="https://th.bing.com/th/id/OIP.k3IfA_aDpe8kw61wMrqa6wHaD4?rs=1&pid=ImgDetMain" alt="AI maintenance">
+                    <h4>AI Maintenance</h4>
+                    <p>Keep your AI systems running smoothly with our expert AI maintenance services! We ensure optimal performance, and update your AI models to adapt to evolving needs. Trust us to keep your AI at peak efficiency.</p>
+                    <button>Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="AI&CODESPHERE"
+        agent-id="35f353df-5777-4c4a-93d4-631da52b0f38"
+        language-code="en"
+    ></df-messenger>
+</body>
+</html>
